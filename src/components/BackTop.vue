@@ -12,10 +12,10 @@ export default {
   },
   methods: {
     backTop () {
-      let top = document.body.scrollTop
+      let top = document.body.scrollTop || document.documentElement.scrollTop
       let speed = 50
       let timer = setInterval(() => {
-        document.body.scrollTop = top -= speed
+        document.body.scrollTop = document.documentElement.scrollTop = top -= speed
         if (top <= 0) {
           top = 0
           clearInterval(timer)
@@ -25,7 +25,7 @@ export default {
   },
   mounted () {
     window.onscroll = () => {
-      let top = document.body.scrollTop
+      let top = document.body.scrollTop || document.documentElement.scrollTop
       this.scroll = top > 300
     }
   }
