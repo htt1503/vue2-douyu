@@ -5,7 +5,7 @@
         </back>
         <div class="mr-content">
             <div class="room-info" v-for="(r, index) in rooms" :key="index">
-                <img :src="r.room_src" alt="">
+                <img v-lazy="r.room_src" alt="">
                 <div class="room-title">
                     <div class="room-name">{{ r.room_name }}</div>
                     <div class="nickname">

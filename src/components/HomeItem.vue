@@ -1,7 +1,7 @@
 <template>
   <div class="mr-item">
       <router-link :to="'/room/' + r.room_id">
-        <img :src="r.room_src" alt="">
+        <img v-lazy="r.room_src" alt="">
         <div class="room-info">
             <span class="nickname">{{ r.nickname }}></span>
             <span class="count">
